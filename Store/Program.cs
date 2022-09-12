@@ -5,6 +5,7 @@ stock.Add("Bulle");
 stock.Add("Fisksås");
 stock.Add("Saftsoppa");
 stock.Add("Ostmacka");
+stock.Add("Gryta");
 
 // Create list with winkelwagen content
 List<string> winkelwagen = new();
