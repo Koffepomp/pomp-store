@@ -96,7 +96,7 @@ void AddToWinkelwagen(string product)
     winkelwagen.Add(product);
     stock.Remove(product);
     Console.ForegroundColor = ConsoleColor.Green;
-    Console.Write(product + "\n added to your winkelwagen!");
+    Console.Write("\n" + product + " added to your winkelwagen!");
     Console.ForegroundColor = ConsoleColor.White;
     Console.ReadLine();
 }
