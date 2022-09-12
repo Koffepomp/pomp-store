@@ -54,6 +54,7 @@ while (running)
         // Remove product from stock    
 }
 
+// Clear screen and show welcome message
 void WelcomeMessage()
 {
     Console.Clear();
@@ -64,6 +65,7 @@ void WelcomeMessage()
     Console.ForegroundColor = ConsoleColor.White;
 }
 
+// Shows available items in stock
 void ShowStock()
 {
     Console.WriteLine("ITEMS AVAILABLE:");
@@ -73,6 +75,7 @@ void ShowStock()
     }
 }
 
+// Shows items that have been bought
 void ShowWinkelwagen()
 {
     Console.Write("\nIn your winkelwagen: ");
@@ -82,6 +85,7 @@ void ShowWinkelwagen()
     }
 }
 
+// Check stock before buying a product
 bool CheckIfProductIsInStock(string product)
 {
     foreach (string item in stock)
@@ -92,6 +96,7 @@ bool CheckIfProductIsInStock(string product)
     return false;
 }
 
+// Adds a product to the winkelwagen
 void AddToWinkelwagen(string product)
 {
     winkelwagen.Add(product);
