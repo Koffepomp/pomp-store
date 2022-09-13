@@ -15,6 +15,9 @@ List<string> winkelwagen = new();
 // Create bool that keeps the store open
 bool running = true;
 
+// Variable to change text colors
+ConsoleColor[] colors = (ConsoleColor[])ConsoleColor.GetValues(typeof(ConsoleColor));
+
 while (running)
 {
     // Clear screen and welcome user to the store
@@ -34,11 +37,11 @@ while (running)
     // If user writes exit they leave the store
     if (userInput == "exit")
     {
-        Message("\nThanks for shopping at the Pomp Store! Please come again! <3", "Cyan");
+        Message("\nThanks for shopping at the Pomp Store! Please come again! <3", 11);
         running = false;
     }
     else
-        // IF the product the user want is in stock
+        // If the product the user want is in stock
         if (CheckIfProductIsInStock(userInput))
         {
         // Put the product in the shopping cart    
@@ -47,7 +50,7 @@ while (running)
         else
         {
         // Tell the user that the product is not available
-        Message("'" + userInput + "' is not available in the store. Get your shit together.", "Red");
+        Message("'" + userInput + "' is not available in the store. Get your shit together.", 12);
         Console.ReadLine();
     }
         // Remove product from stock    
@@ -57,7 +60,7 @@ while (running)
 void WelcomeMessage()
 {
     Console.Clear();
-    Message(" -----------------------------\n|| WELCOME TO THE POMP STORE ||\n -----------------------------\n", "Yellow");
+    Message(" -----------------------------\n|| WELCOME TO THE POMP STORE ||\n -----------------------------\n", 14);
 }
 
 // Shows available items in stock
@@ -96,20 +99,13 @@ void AddToWinkelwagen(string product)
 {
     winkelwagen.Add(product);
     stock.Remove(product);
-    Message((product + " added to your winkelwagen!"), "Green");
+    Message((product + " added to your winkelwagen!"), 10);
     Console.ReadLine();
 }
 
-void Message(string msg, string color)
+void Message(string msg, int color)
 {
-    if (color == "Green")
-        Console.ForegroundColor = ConsoleColor.Green;
-    else if (color == "Red")
-        Console.ForegroundColor = ConsoleColor.Red;
-    else if (color == "Yellow")
-        Console.ForegroundColor = ConsoleColor.Yellow;
-    else if (color == "Cyan")
-        Console.ForegroundColor = ConsoleColor.Cyan;
+    Console.ForegroundColor = colors[color];
     Console.WriteLine("\n" + msg);
     Console.ForegroundColor = ConsoleColor.White;
 }
