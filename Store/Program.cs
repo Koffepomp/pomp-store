@@ -7,7 +7,7 @@ stock.Add("Bread");
 stock.Add("Pompsauce");
 stock.Add("Peacebloom");
 stock.Add("Cheese");
-stock.Add("Boiler");
+stock.Add("Julmust");
 
 // Create list with winkelwagen content
 List<string> winkelwagen = new();
